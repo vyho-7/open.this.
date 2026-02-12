@@ -1,0 +1,227 @@
+const app = document.getElementById("app");
+const hearts = document.getElementById("hearts");
+
+let slide = 0;
+let reveal = false;
+let chosen = false;
+let heartInterval = null;
+
+function next(){
+  slide++;
+  render();
+}
+
+function startHeartRain(){
+  if(heartInterval) return;
+
+  heartInterval = setInterval(()=>{
+    const h = document.createElement("div");
+    h.className="heart";
+    h.innerText=Math.random()>0.5?"💗":"💖";
+    h.style.left=Math.random()*window.innerWidth+"px";
+    h.style.opacity=0.4+Math.random()*0.4;
+    hearts.appendChild(h);
+    setTimeout(()=>h.remove(),6000);
+  },700);
+}
+
+function stopHeartRain(){
+  clearInterval(heartInterval);
+  heartInterval=null;
+  hearts.innerHTML="";
+}
+
+function render(){
+
+stopHeartRain();
+
+if(slide===0){
+app.innerHTML=`
+<h1>⚠️ this is a very serious psychological test</h1>
+<div class="small">please answer honestly</div>
+<br>
+<button onclick="next()">start</button>
+`;
+}
+
+else if(slide===1){
+app.innerHTML=`
+<h1>how have you been recently?</h1>
+<button onclick="next()">good</button>
+<button onclick="next()">ups and downs</button>
+<button onclick="next()">tired but trying</button>
+`;
+}
+
+else if(slide===2){
+app.innerHTML=`
+<h1>do you overthink at night</h1>
+<button onclick="next()">yes</button>
+<button onclick="next()">sometime</button>
+<button onclick="next()">always</button>
+`;
+}
+
+else if(slide===3){
+app.innerHTML=`
+<h1>have you been sleeping with a calm heart?</h1>
+<button onclick="next()">yes</button>
+<button onclick="next()">no</button>
+`;
+}
+
+else if(slide===4){
+app.innerHTML=`
+<h1>on a scale of 1–10, how dramatic has life been lately?</h1>
+<div style="display:flex;align-items:center;gap:15px;margin:30px 0;">
+<div style="font-weight:600;">1</div>
+<input type="range" min="1" max="10" value="5">
+<div style="font-weight:600;">10</div>
+</div>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===5){
+app.innerHTML=`
+<div class="same">
+gotcha, this wasn’t really a test
+i just wanted to check on you :>
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===6){
+app.innerHTML=`
+<div class="same">
+you’ve been carrying more than you say, haven’t you?
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===7){
+app.innerHTML=`
+<div class="same">
+i don’t want to fix you
+i just want to stand next to you
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===8){
+app.innerHTML=`
+<div class="same">
+you don’t have to have everything figured out
+you don’t have to respond perfectly
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===9){
+app.innerHTML=`
+<div class="same">
+i just want you to know i'm still here
+calm 
+not pushing
+just here
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===10){
+app.innerHTML=`
+<div class="same">
+for you, I would learn anything
+i didn’t even know how to code
+but I figured it out just to make this 
+not because I had to but because I wanted to
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===11){
+app.innerHTML=`
+<div class="same">
+because,
+you’re my Meredith Grey to my Derek Shepherd
+</div>
+<img src="assets/meredith.jpg">
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===12){
+app.innerHTML=`
+<div class="same">
+and my Robin Scherbatsky to my Ted Mosby
+</div>
+<div class="quote">
+"If you are looking for a word that means caring about someone beyond all rationality and wanting them to have everything they want no matter how much it destroys you: it's love!"
+</div>
+<img src="assets/robin.jpg">
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===13){
+if(!reveal){
+app.innerHTML=`
+<div class="big">don’t click this.</div>
+<br>
+<button onclick="reveal=true; render()">oops you have to click it tho</button>
+`;
+}else{
+app.innerHTML=`
+<div class="same">i miss you :-(</div>
+<div class="small">(in case that wasn’t obvious)</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+}
+
+else if(slide===14){
+if(!chosen){
+app.innerHTML=`
+<button onclick="chosen=true; next()">send me a text</button>
+<button onclick="chosen=true; next()">ignore this dramatically</button>
+<button onclick="chosen=true; next()">smile and close it</button>
+`;
+}
+}
+
+else if(slide===15){
+app.innerHTML=`
+<div class="same">
+that’s okay
+i still meant every word
+</div>
+<br>
+<button onclick="next()">Next</button>
+`;
+}
+
+else if(slide===16){
+app.innerHTML=`
+<div class="big">Happy Valentine’s Day <3<3 &lt;3</div>
+`;
+startHeartRain();
+}
+
+}
+
+render();
