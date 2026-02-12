@@ -57,7 +57,7 @@ else if(slide===2){
 app.innerHTML=`
 <h1>do you overthink at night</h1>
 <button onclick="next()">yes</button>
-<button onclick="next()">sometime</button>
+<button onclick="next()">sometimes</button>
 <button onclick="next()">always</button>
 `;
 }
@@ -118,8 +118,9 @@ i just hope you’re okay
 else if(slide===8){
 app.innerHTML=`
 <div class="same">
-i just want you to know i'm still here
-some feelings don’t disappear just because we stop talking
+for you, i would learn anything
+i didn’t even know how to code
+but i figured it out just to make this 
 </div>
 <br>
 <button onclick="next()">Next</button>
@@ -129,10 +130,8 @@ some feelings don’t disappear just because we stop talking
 else if(slide===9){
 app.innerHTML=`
 <div class="same">
-for you, i would learn anything
-i didn’t even know how to code
-but i figured it out just to make this 
-not because i had to but because i wanted to
+not because i expect anything
+just because i wanted to
 </div>
 <br>
 <button onclick="next()">Next</button>
@@ -174,7 +173,7 @@ app.innerHTML=`
 `;
 }else{
 app.innerHTML=`
-<div class="same">i miss you :-(</div>
+<div class="same">just a little warmth from me to you :3</div>
 <div class="small">(in case that wasn’t obvious)</div>
 <br>
 <button onclick="next()">Next</button>
@@ -185,8 +184,8 @@ app.innerHTML=`
 else if(slide===13){
 if(!chosen){
 app.innerHTML=`
-<button onclick="chosen=true; next()">send me a text</button>
-<button onclick="chosen=true; next()">ignore this dramatically</button>
+<button onclick="chosen=true; next()">act like this didn’t affect you</button>
+<button onclick="chosen=true; next()">save this for later</button>
 <button onclick="chosen=true; next()">smile and close it</button>
 `;
 }
@@ -196,7 +195,7 @@ else if(slide===14){
 app.innerHTML=`
 <div class="same">
 that’s okay
-i still meant every word
+i still meant every word ;)
 </div>
 <br>
 <button onclick="next()">Next</button>
@@ -205,7 +204,7 @@ i still meant every word
 
 else if(slide===15){
 app.innerHTML=`
-<div class="big">Happy Valentine’s Day <3<3 &lt;3</div>
+<div class="big">Happy Valentine’s Day &lt;3 &lt;3 &lt;3</div>
 `;
 startHeartRain();
 }
