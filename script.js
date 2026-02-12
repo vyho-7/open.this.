@@ -157,7 +157,7 @@ app.innerHTML=`
 because,
 you’re my Meredith Grey to my Derek Shepherd
 </div>
-<img src="assets/meredith.jpg">
+<img src="meredith.jpg">
 <br>
 <button onclick="next()">Next</button>
 `;
@@ -171,7 +171,7 @@ and my Robin Scherbatsky to my Ted Mosby
 <div class="quote">
 "If you are looking for a word that means caring about someone beyond all rationality and wanting them to have everything they want no matter how much it destroys you: it's love!"
 </div>
-<img src="assets/robin.jpg">
+<img src="robin.jpg">
 <br>
 <button onclick="next()">Next</button>
 `;
